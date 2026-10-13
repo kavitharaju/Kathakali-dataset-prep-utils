@@ -1,0 +1,8 @@
+# Install torch and torchcodec from the CPU-only index first; otherwise torchcodec
+# comes as the CUDA build and fails to load without NVIDIA libraries:
+#   uv venv .venv
+#   uv pip install --python .venv/bin/python torch torchcodec --index-url https://download.pytorch.org/whl/cpu
+#   uv pip install --python .venv/bin/python -r requirements.txt
+datasets>=4.0
+torch
+torchcodec
