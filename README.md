@@ -199,7 +199,11 @@ Things that matter here:
   the video loader's metadata (`metadata_filenames`) rather than as CSVs.
 - List the `.mp4` files and the metadata file explicitly, so the `videos`
   configs don't pick up the segment CSVs.
-- The `videos_hd` config fails in the viewer until `videos_hd/` has videos.
+- **Leave out (or comment out) the `videos_hd` config until `videos_hd/` has the
+  videos and `metadata.jsonl`.** A config with no files fails in the viewer.
+- If a config shows `ResponseNotFound` in the viewer while its split and row
+  counts are correct, the viewer's preview job for it did not run (this happened
+  right after a repo rename). Any new commit makes the viewer reprocess everything.
 
 ## 7. Commit and push
 
@@ -249,7 +253,7 @@ cd "$UTILS_DIR/testing"
 .venv/bin/python play_clip_streaming.py 3 --split test --repo "$HF_USER/$HF_REPO"
 ```
 
-Without a repo argument the scripts fall back to `Kavitha/Kathakali-test`
+Without a repo argument the scripts fall back to `Kavitha/kathakali-test`
 (`REPO_ID` at the top of each script).
 
 `test_dataset.py` runs the usage example below and checks that both splits have

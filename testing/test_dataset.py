@@ -8,7 +8,7 @@ import sys
 
 from datasets import load_dataset
 
-REPO_ID = sys.argv[1] if len(sys.argv) > 1 else "Kavitha/Kathakali-test"
+REPO_ID = sys.argv[1] if len(sys.argv) > 1 else "Kavitha/kathakali-test"
 
 # --- README example ---
 segments = load_dataset(REPO_ID, "segments", split="train")

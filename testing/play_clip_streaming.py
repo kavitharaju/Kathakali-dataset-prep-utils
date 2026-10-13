@@ -15,7 +15,7 @@ from itertools import islice
 
 from datasets import Video, load_dataset
 
-REPO_ID = "Kavitha/Kathakali-test"
+REPO_ID = "Kavitha/kathakali-test"
 
 parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
 parser.add_argument("index", type=int, nargs="?", default=0, help="segment row number (default 0)")
